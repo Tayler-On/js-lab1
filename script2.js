@@ -9,6 +9,8 @@ let wage = 10;
 let overtimeWage = wage*1.5;
 // calculate hours of overtime worked
 let overtimeHours = hours-40;
+// limit for hours before overtime 
+let normalHours = 40;
 // current goal to earn
 let earningsGoal = 1000000;
 // number of weeks worked
@@ -23,10 +25,9 @@ if(hours<=40){
 }
 // otherwise calculate pay including overtime (more than 40 hrs)
 else{
-    let paycheck = wage * 40 + overtimeWage * overtimeHours;
+    let paycheck = wage * normalHours + overtimeWage * overtimeHours;
     weeklyPaycheckAndWeeksTillEarningGoal(paycheck);
 }
-
 
 // function for console.log output that indicates the users weekly pay based on their hours and wage and also tells how long it will take them in weeks to earn their goal 
 function weeklyPaycheckAndWeeksTillEarningGoal(paycheck) {
@@ -37,5 +38,3 @@ function weeklyPaycheckAndWeeksTillEarningGoal(paycheck) {
     };
     console.log(`It will take this person ${weeksWorked} to earn ${earningsGoal} with their current weekly paycheck.`);
 }
-
-    
